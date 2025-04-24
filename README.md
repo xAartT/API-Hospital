@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # API HOSPITAL
 
 ## 📝 Descrição
@@ -72,3 +73,16 @@ Cria um novo usuário.
 ```
 
 (Repita esse padrão para cada endpoint criado)
+=======
+## Projeto de Template - Conexão com o Banco de Dados
+
+Para usar esse repositório como template para criar o seu acesse: 
+
+```
+https://github.com/new?template_name=api-template&template_owner=kunzgabriel
+```
+
+Esse procedimento vai criar um repositório igual ao template, já vinculado ao seu github.
+
+Posteriormente utilize o `git clone`.
+>>>>>>> 6b5d0806fb661765ef4ef55f062596729eb670ed
