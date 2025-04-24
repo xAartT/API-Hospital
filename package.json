@@ -3,11 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "dev": "nodemon template/src/index.js"
-=======
-    "dev": "nodemon src/index.js"
->>>>>>> 6b5d0806fb661765ef4ef55f062596729eb670ed
   },
   "keywords": [],
   "author": "",
@@ -19,10 +15,6 @@
     "pg": "^8.14.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "nodemon": "^3.1.10"
-=======
-    "nodemon": "^3.1.9"
->>>>>>> 6b5d0806fb661765ef4ef55f062596729eb670ed
   }
 }
