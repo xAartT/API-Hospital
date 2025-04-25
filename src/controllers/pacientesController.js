@@ -1,4 +1,4 @@
-const service = require('../services/cadastrarPaciente')
+const service = require('../services/pacientesController')
 
 async function cadastrarPaciente(req, res) {
     try {
