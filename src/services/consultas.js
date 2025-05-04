@@ -9,6 +9,20 @@ async function buscarConsultas() {
     }
 }
 
+async function buscarConsultasPendentesPorMedico(medicoId) {
+    try {
+        const result = await pool.query(
+            "SELECT * FROM agendamento WHERE agendamento.status = 'P' AND agendamento.medico_id = $1",
+            [medicoId]
+        );
+        return result.rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
+
 module.exports = {
-    buscarConsultas
+    buscarConsultas, 
+    buscarConsultasPendentesPorMedico
 };
