@@ -1,4 +1,4 @@
-const service = require('../services/consultas');
+const service = require('../services/consultasService');
 
 async function buscarConsultas(req, res) {
     try {

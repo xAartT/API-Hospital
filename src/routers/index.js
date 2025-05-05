@@ -1,7 +1,9 @@
-const consultas = require('./consultas');
-const cadastrarPaciente = require('./pacientesController')
+const consultas = require('./consultasRouter');
+const pacientes = require('./pacientesRouter');
+const medicos = require('./medicosRouter');
 
 module.exports = (app) => {
   consultas(app);
-  cadastrarPaciente(app);
-  }
+  pacientes(app);
+  medicos(app);
+};
