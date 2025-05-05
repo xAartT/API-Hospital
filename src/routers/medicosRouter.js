@@ -1,4 +1,5 @@
 const controller = require('../controllers/medicosController');
 module.exports = (app) => {
-  app.get('/medicos', controller.cadastrarMedico);
+  app.post('/medicos', controller.cadastrarMedico);
+  app.post('/medicos/cadastrar/especialidade', controller.cadastrarEspecialidade);
 }

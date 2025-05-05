@@ -16,10 +16,27 @@ async function cadastrarMedico(req, res) {
             agendamento: novoMedico
         });
     } catch (error) {
-        return res.status(500).json({ erro: 'Erro ao agendar a consulta.', detalhes: error.message });
+        return res.status(500).json({ erro: 'Erro ao cadastrar médico.', detalhes: error.message });
+    }
+}
+
+async function cadastrarEspecialidade(req, res) {
+    try {
+        const { id, nome } = req.body;
+        const especialidade = await service.cadastrarEspecialidade({
+            id, 
+            nome
+        });
+        return res.status(201).json({
+            mensagem: 'Especialidade cadastrada com sucesso!',
+            agendamento: especialidade
+        });
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao cadastrar especialidade.', detalhes: error.message });
     }
 }
 
 module.exports = {
-    cadastrarMedico 
+    cadastrarMedico,
+    cadastrarEspecialidade 
 };

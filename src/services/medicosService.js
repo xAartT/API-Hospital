@@ -27,6 +27,30 @@ async function cadastrarMedico(medico) {
     }
 }
 
+async function cadastrarEspecialidade(especialidade) {
+    const {
+        id, 
+        nome
+    } = especialidade;
+
+    const query = `
+        INSERT INTO especialidade 
+        (id, nome)
+        VALUES ($1, $2)
+        RETURNING *;
+    `;
+
+    const values = [id, nome];
+    
+    try {
+        const result = await pool.query(query, values);
+        return result.rows[0];
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
-    cadastrarMedico
+    cadastrarMedico,
+    cadastrarEspecialidade
 };
