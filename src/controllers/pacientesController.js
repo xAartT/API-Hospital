@@ -4,7 +4,7 @@ async function cadastrarPaciente(req, res) {
     try {
         if (!req.body.nome || !req.body.cpf) {
             return res.status(400).json({
-                message: 'campos obrigatorios faltando'
+                message: 'Campos obrigatorios faltando.'
             })
         }
         const consultas = await service.cadastrarPaciente(req.body);
