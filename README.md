@@ -18,54 +18,6 @@ API para gerenciamento de agendamentos, controle de usuários e autenticação d
 
 ---
 
-## 📁 Estrutura do Projeto
-
-```
-src/
-├── controllers/
-│   └── authController.js
-├── services/
-│   └── authService.js
-├── routes/
-│   └── authRoutes.js
-├── configs/
-│   └── index.js (configuração do banco)
-├── index.js (ponto de entrada da aplicação)
-└── routers/
-    └── index.js (módulo de rotas agrupadas)
-```
-
----
-
-## 🔧 Como executar
-
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-
-# Acesse o diretório
-cd nome-do-projeto
-
-# Instale as dependências
-npm install
-
-# Configure o arquivo .env
-# Exemplo:
-DB_HOST=localhost
-DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=sua_senha
-DB_NAME=nome_do_banco
-PORT=3000
-
-# Rode os scripts SQL para criar as tabelas (manual ou via pgAdmin)
-
-# Inicie o servidor em modo desenvolvimento
-npm run dev
-```
-
----
-
 ## 📚 Documentação da API
 
 ### 🔐 `POST /login`
@@ -142,9 +94,3 @@ Cria um novo usuário.
 ## 🧪 Testes
 
 Use o [Insomnia](https://insomnia.rest/) ou [Postman](https://www.postman.com/) para testar os endpoints.
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT.
