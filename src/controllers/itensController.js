@@ -1,5 +1,6 @@
 const service = require('../services/itensService')
 
+//****** INSERÇÕES ******
 async function cadastrarItens(req, res) {
     try {
         if (!req.body.valor ||!req.body.quantidade) {
@@ -23,7 +24,28 @@ async function cadastrarTipos(req, res) {
     }
 }
 
+//****** BUSCAS ******
+async function buscarItensCadastrados(req, res) {
+    try {
+        const itens = await service.buscarItensCadastrados();
+        return res.status(200).json(itens);
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao buscar itens.', detalhes: error.message });
+    }
+}
+
+async function buscarTiposCadastrados(req, res) {
+    try {
+        const tipos = await service.buscarTiposCadastrados();
+        return res.status(200).json(tipos);
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao buscar tipos.', detalhes: error.message });
+    }
+}
+
 module.exports = {
     cadastrarItens, 
-    cadastrarTipos
+    cadastrarTipos,
+    buscarItensCadastrados,
+    buscarTiposCadastrados
 };

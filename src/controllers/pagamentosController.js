@@ -14,6 +14,18 @@ async function cadastrarPagamento(req, res) {
     }
 }
 
+//****** BUSCAR ******
+async function buscarPagamentoPorId(req, res) {
+    try {
+        const pagamentoId = req.params.id;
+        const pagamento = await service.buscarPagamentoPorId(pagamentoId);
+        return res.status(200).json(pagamento);
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao buscar pagamento por ID.', detalhes: error.message });
+    }
+}
+
 module.exports = {
-    cadastrarPagamento
+    cadastrarPagamento,
+    buscarPagamentoPorId
 };

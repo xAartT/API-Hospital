@@ -1,5 +1,6 @@
 const service = require('../services/medicosService');
 
+//****** CADASTRAR ******
 async function cadastrarMedico(req, res) {
     try {
         const { id, nome, especialidade_id, crm, cpf_cnpj, usuario_id } = req.body;
@@ -36,7 +37,19 @@ async function cadastrarEspecialidade(req, res) {
     }
 }
 
+//****** BUSCAR ******
+async function buscarMedicoPorId(req, res) {
+    try {
+        const medicoId = req.params.id;
+        const consultas = await service.buscarMedicoPorId(medicoId);
+        return res.status(200).json(consultas);
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao buscar médico por ID.', detalhes: error.message });
+    }
+}
+
 module.exports = {
     cadastrarMedico,
-    cadastrarEspecialidade 
+    cadastrarEspecialidade,
+    buscarMedicoPorId
 };

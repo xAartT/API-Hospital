@@ -1,5 +1,6 @@
 const pool = require('../configs/index.js')
 
+//****** CADASTRAR ******
 async function cadastrarMedico(medico) {
     const {
         id, 
@@ -50,7 +51,21 @@ async function cadastrarEspecialidade(especialidade) {
     }
 }
 
+//****** BUSCAS ******
+async function buscarMedicoPorId(medicoId) {
+    try {
+        const result = await pool.query(
+            "SELECT * FROM medico WHERE medico.id = $1",
+            [medicoId]
+        );
+        return result.rows;
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     cadastrarMedico,
-    cadastrarEspecialidade
+    cadastrarEspecialidade,
+    buscarMedicoPorId
 };

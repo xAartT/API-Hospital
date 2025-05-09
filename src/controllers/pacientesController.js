@@ -1,5 +1,6 @@
 const service = require('../services/pacientesService')
 
+//****** CADASTRAR ******
 async function cadastrarPaciente(req, res) {
     try {
         if (!req.body.nome || !req.body.cpf) {
@@ -14,6 +15,18 @@ async function cadastrarPaciente(req, res) {
     }
 }
 
+//****** BUSCAR ******
+async function buscarPacientePorId(req, res) {
+    try {
+        const pacienteId = req.params.id;
+        const paciente = await service.buscarPacientePorId(pacienteId);
+        return res.status(200).json(paciente);
+    } catch (error) {
+        return res.status(500).json({ erro: 'Erro ao buscar paciente por ID.', detalhes: error.message });
+    }
+}
+
 module.exports = {
-    cadastrarPaciente
+    cadastrarPaciente,
+    buscarPacientePorId
 };
