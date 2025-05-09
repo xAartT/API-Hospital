@@ -90,7 +90,3 @@ Cria um novo usuário.
 ```
 
 ---
-
-## 🧪 Testes
-
-Use o [Insomnia](https://insomnia.rest/) ou [Postman](https://www.postman.com/) para testar os endpoints.
